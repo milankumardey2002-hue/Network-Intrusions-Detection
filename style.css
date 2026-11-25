@@ -1,0 +1,24 @@
+:root{--bg:#f6f7fb;--card:#fff;--tx:#161a2b;--mu:#5d6580;--bd:#dde1ee;--ac:#3b5bdb;--ok:#1f9d55;--bad:#d6336c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1222;--card:#181c33;--tx:#eceffa;--mu:#a0a8c8;--bd:#2c3256;--ac:#7c94ff;--ok:#4cd488;--bad:#ff6b9c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1222;--card:#181c33;--tx:#eceffa;--mu:#a0a8c8;--bd:#2c3256;--ac:#7c94ff;--ok:#4cd488;--bad:#ff6b9c;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:880px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:1.7rem;margin:0 0 4px}h2{font-size:1.15rem;margin:0 0 8px}
+.sub{color:var(--mu);margin:0 0 20px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{flex:1;min-width:150px;padding:10px 12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;cursor:pointer;font:inherit;text-align:left}
+.tab small{display:block;color:var(--mu)}
+.tab.on{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac) inset}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;margin-bottom:16px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+label{display:block;font-size:.85rem;color:var(--mu);margin-bottom:4px}
+input,select{width:100%;padding:9px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit}
+button.go{margin-top:14px;padding:10px 20px;border:0;border-radius:8px;background:var(--ac);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.res{margin-top:16px;padding:14px;border-radius:10px;border:1px solid var(--bd);display:none}
+.res b{font-size:1.25rem}.bad{color:var(--bad)}.ok{color:var(--ok)}
+.bar{height:8px;background:var(--bd);border-radius:6px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:var(--ac)}
+.note{font-size:.82rem;color:var(--mu);margin-top:10px}
+ol{padding-left:20px;margin:8px 0}li{margin:3px 0}
+.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}td,th{border:1px solid var(--bd);padding:6px 8px;text-align:left}
+.pane{display:none}.pane.on{display:block}

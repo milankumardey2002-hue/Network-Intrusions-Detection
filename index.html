@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MCA PBL – Network Intrusion Detection (Sec D)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="w">
+<h1>MCA PBL – Network Intrusion Detection (Sec D)</h1>
+<p class="sub">Sec D · UNSW-NB15</p>
+
+<!-- SEC D -->
+<div class="pane on" id="d">
+<div class="card"><h2>Network Intrusion Detection System</h2>
+<div class="g">
+<div><label>Protocol</label><select id="d_pr"><option>tcp</option><option>udp</option><option>icmp</option><option>other</option></select></div>
+<div><label>Service</label><select id="d_sv"><option>http</option><option>dns</option><option>ssh</option><option>ftp</option><option>smtp</option><option>- (none)</option></select></div>
+<div><label>Duration (s)</label><input id="d_du" type="number" value="0.5" step="0.1"></div>
+<div><label>Source packets</label><input id="d_sp" type="number" value="12"></div>
+<div><label>Destination packets</label><input id="d_dp" type="number" value="10"></div>
+<div><label>Source bytes</label><input id="d_sb" type="number" value="1200"></div>
+<div><label>Destination bytes</label><input id="d_db" type="number" value="8000"></div>
+</div>
+<button class="go" onclick="pd()">Classify</button>
+<div class="res" id="d_o"></div>
+<p class="note">Illustrative prediction only. This demo scores traffic with simple heuristics; a trained UNSW-NB15 model would use the full feature set.</p></div>
+<div class="card"><h2>Project at a glance</h2>
+<p>Classify network traffic as <b>Normal</b> or <b>Malicious</b> using UNSW-NB15 (about 2.54 million records; alternative: CIC-IDS2017). Focus on attack-class recall and false negatives, and drop identifiers or label-derived columns.</p></div>
+</div>
+
+<!-- Shared workflow -->
+<div class="card"><h2>Project workflow</h2>
+<ol>
+<li>Load and understand the dataset</li><li>Exploratory data analysis</li><li>Prepare data (features, encoding, scaling, no leakage)</li>
+<li>Split 80/20 with stratification</li><li>Train Logistic Regression, Decision Tree, Random Forest</li>
+<li>Evaluate: accuracy, precision, recall, F1, confusion matrix</li><li>5-fold cross-validation</li>
+<li>Hyperparameter tuning with GridSearchCV</li><li>Select the best model; evaluate once on the test set</li>
+<li>Predict new, unseen data</li><li>Save model and pipeline with joblib; build the interface</li>
+</ol></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
